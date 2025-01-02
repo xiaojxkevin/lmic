@@ -16,8 +16,9 @@
 """Defines project-wide constants."""
 
 NUM_CHUNKS = 488281
-CHUNK_SIZE_BYTES = 2048
-CHUNK_SHAPE_2D = (32, 64)
+CHUNK_H, CHUNK_W = 16, 32 # 512
+CHUNK_SIZE_BYTES = CHUNK_H * CHUNK_W
+CHUNK_SHAPE_2D = (CHUNK_H, CHUNK_W)
 ALPHABET_SIZE = 256
 
 # Base 2 means that the coder writes bits.
