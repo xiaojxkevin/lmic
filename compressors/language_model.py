@@ -22,10 +22,10 @@ from typing import Callable
 import haiku as hk
 import numpy as np
 
-from language_modeling_is_compression import arithmetic_coder
-from language_modeling_is_compression import constants
-from language_modeling_is_compression import transformer
-from language_modeling_is_compression import utils
+import arithmetic_coder
+import constants
+import transformer
+import utils
 
 
 def _retrieve_model_params() -> hk.Params:

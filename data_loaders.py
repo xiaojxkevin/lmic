@@ -26,7 +26,7 @@ import zipfile
 import numpy as np
 import tensorflow_datasets as tfds
 
-from language_modeling_is_compression import constants
+import constants
 
 
 def _get_librispeech_dataset():

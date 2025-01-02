@@ -20,9 +20,9 @@ import gzip
 import lzma
 from typing import Mapping, Protocol
 
-from language_modeling_is_compression.compressors import flac
-from language_modeling_is_compression.compressors import language_model
-from language_modeling_is_compression.compressors import png
+import flac
+import language_model
+import png
 
 
 class Compressor(Protocol):
