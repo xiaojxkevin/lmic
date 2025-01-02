@@ -13,6 +13,15 @@
 # limitations under the License.
 # ==============================================================================
 
+import os
+# os.environ['CUDA_VISIBLE_DEVICES'] = '0'
+os.environ["XLA_PYTHON_CLIENT_PREALLOCATE"]="false"
+os.environ["XLA_PYTHON_CLIENT_MEM_FRACTION"]=".30"
+os.environ["XLA_PYTHON_CLIENT_ALLOCATOR"]="platform"
+
+import faulthandler
+faulthandler.enable()
+
 """Trains a language model on the Enwik8 dataset."""
 
 import functools
@@ -23,15 +32,18 @@ from absl import app
 from absl import logging
 import haiku as hk
 import jax
+jax.config.update("jax_traceback_filtering", "off")
+jax.default_backend()
+
 import jax.numpy as jnp
 import numpy as np
 import optax
 import tqdm
 import tree
 
-from language_modeling_is_compression import constants
-from language_modeling_is_compression import data_loaders
-from language_modeling_is_compression import transformer
+import constants
+import data_loaders
+import transformer
 
 
 def _to_marginals(
@@ -196,7 +208,7 @@ def train_transformer_decoder(
 def main(_) -> None:
   """Trains a language model and saves the parameters to a JSON file."""
   params, loss = train_transformer_decoder(
-      training_steps=100,
+      training_steps=5000,
       log_every=10,
       sequence_length=constants.CHUNK_SIZE_BYTES,
   )
