@@ -42,7 +42,7 @@ def encode_and_decode(
       data, missed_bits = mask_fn(data)
       print("<><><>The original data:\n", data)
 
-      compressed_data = compress(data)
+      compressed_data = compress(data, use_slow_lossless_compression=True)
       print("<><><>Compressed data:\n", compressed_data)
 
       decoded_data = decompress(data=compressed_data)
