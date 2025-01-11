@@ -98,8 +98,6 @@ def compress(
     log_probs = predict_fn(sequence_array[None])[0, ...]
   probs = np.exp(log_probs) # shape (constants.CHUNK_SIZE_BYTES, constatns.ALPHABET_SIZE)
 
-  np.save("./en_probs.npy", probs)
-
   output = list()
   encoder = arithmetic_coder.Encoder(
       base=constants.ARITHMETIC_CODER_BASE,
