@@ -1,0 +1,15 @@
+it == 2024
+There are 0 missed bits
+<><><>The original data:
+ b'ross India and Southeast Asia, separated by regions where other languages are spoken. It is widely believed that the Austroasiatic languages are the [[autochthonous]] languages of Southeast Asia and eastern India, and that the other languages of the region, including the [[Indo-European languages|Indo-European]], [[Tai-Kadai languages|Tai-Kadai]], and [[Sino-Tibetan]] languages, are the result of later [[human migration|migrations of people]]. (There are, for example, Austroasiatic words in the Tibeto-Burma'
+use_slow_lossless_compression:  27%|█████████████████████████▌                                                                    | 139/512 [06:27<19:18,  3.10s/it]E0111 15:52:05.930767   22640 hlo_lexer.cc:443] Failed to parse int literal: 2909848078959262172560
+use_slow_lossless_compression:  76%|███████████████████████████████████████████████████████████████████████▌                      | 390/512 [20:05<07:35,  3.73s/it]E0111 16:05:47.640390   22640 hlo_lexer.cc:443] Failed to parse int literal: 343665680392108724612768
+use_slow_lossless_compression: 100%|██████████████████████████████████████████████████████████████████████████████████████████████| 512/512 [27:19<00:00,  3.20s/it]
+There are 3 padded bits
+<><><>Compressed data:
+ b'\x1ay\xe8\xf1\x0f\xe7\x08\xeb\xb0\xf72j\xaa\x9b\x97\xf7\x99u!xZ\xa6\x1eVd\xd0p\t\xa0\xc8\xdd\xb4\n\x00\xf5-\t\x10\xb0\x99\xd8\xc2\x1c\x82\x82\n\xf6\x04\x88\xa5\x04\xcc\x8ai\xed\x83\r%\x95\xfd;d\xafhJ\xd0\xc9$e\x11:\x1a\xb5!Z\x8f\xf1\xdf\xa5\x15\xd1\xc0\xf3\x00X\x9a\x7f`|\t>Cc\xab\xed\xaa\x07\x01[\xac\xd3\xa7\xc4\xf5\xad\x03"\xaf,\x19]\xb7\x93% \x13\xc6\xcd\xa1\x02\xdc2V\xef&\xfd\x08\x13\x0f\xf3\xeb[\xf0\x1a\x8fJ\x91\xa3W\xfa-\xdaQ\xb6\x08\x8aMirX\xb9\xd8\x11a\x86\x84oR@\xc8=\xb9\xa2\x9d\x98\x1f\xc4{\xca]8\xe6q\x7fl\xbf\x8cN\x16Q\xff\xe9\x19\xd1\xe9i\x92\xf0\xebJ2B\xa3\xadR|\xd7\xc0\xca\xc0'
+---Decoding::  27%|█████████████████████████████▉                                                                                 | 138/512 [03:50<10:51,  1.74s/it]E0111 16:16:50.194610   22640 hlo_lexer.cc:443] Failed to parse int literal: 2909848078959262172560
+---Decoding::  76%|████████████████████████████████████████████████████████████████████████████████████▎                          | 389/512 [11:30<03:28,  1.69s/it]E0111 16:24:32.148273   22640 hlo_lexer.cc:443] Failed to parse int literal: 343665680392108724612768
+---Decoding:: 100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████| 512/512 [15:26<00:00,  1.81s/it]
+<><><>Decoded data:
+ b'ross India and Southeast Asia, separated by regions where other languages are spoken. It is widely believed that the Austroasiatic languages are the [[autochthonous]] languages of Southeast Asia and eastern India, and that the other languages of the region, including the [[Indo-European languages|Indo-European]], [[Tai-Kadai languages|Tai-Kadai]], and [[Sino-Tibetan]] languages, are the result of later [[human migration|migrations of people]]. (There are, for example, Austroasiatic words in the Tibeto-Burma'
