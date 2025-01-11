@@ -27,6 +27,7 @@ import constants
 import transformer
 import utils
 
+from tqdm import tqdm
 
 def _retrieve_model_params() -> hk.Params:
   """Returns the trained model parameters.
@@ -87,15 +88,17 @@ def compress(
 
   if use_slow_lossless_compression:
     log_probs = list()
-    for subsequence_length in range(len(sequence_array)):
+    for subsequence_length in tqdm(range(len(sequence_array)), desc="use_slow_lossless_compression"):
       subsequence_probs = predict_fn(
           sequence_array[None, : subsequence_length + 1]
-      )
+      ) # shape (1, subsequence_length + 1, constants.ALPHABET_SIZE)
       log_probs.append(subsequence_probs[0, -1])
     log_probs = np.vstack(log_probs)
   else:
     log_probs = predict_fn(sequence_array[None])[0, ...]
-  probs = np.exp(log_probs)
+  probs = np.exp(log_probs) # shape (constants.CHUNK_SIZE_BYTES, constatns.ALPHABET_SIZE)
+
+  np.save("./en_probs.npy", probs)
 
   output = list()
   encoder = arithmetic_coder.Encoder(
@@ -160,7 +163,7 @@ def decompress(
   sequence_array = np.empty((1,), dtype=np.uint8)
   probs = np.exp(predict_fn(sequence_array[None])[0, ...])
 
-  for idx in range(uncompressed_length):
+  for idx in tqdm(range(uncompressed_length), desc="---Decoding:"):
     token = decoder.decode(
         utils.normalize_pdf_for_arithmetic_coding(probs[idx])
     )
